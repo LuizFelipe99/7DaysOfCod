@@ -1,0 +1,49 @@
+<div class="cabecalho">
+  <h1>naves</h1>
+  <span>Busque por naves</span>
+</div>
+<!-- <div class="form-search">
+  <form (submit)="getStarships()">
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name" />
+    <button type="submit" >Buscar</button>
+  </form>
+</div> -->
+
+<div class="page-content">
+  <div class="table-result">
+    <table id="customers">
+      <tr>
+        <th>Nome</th>
+        <th>Modelo</th>
+        <th>Criado em</th>
+        <th>Valor</th>
+        <th>Largura</th>
+        <th>Velocidade maxima</th>
+      </tr>
+      <tr *ngFor="let data of starships;">
+        <td> {{ data.name }} </td>
+        <td> {{ data.model }} </td>
+        <td> {{ data.created }} </td>
+        <td> {{ data.cost_in_credits }} </td>
+        <td> {{ data.length }} </td>
+        <td> {{ data.max_atmosphering_speed }} </td>
+      </tr>
+    </table>
+    
+    <div class="isEmpty" *ngIf="isEmpty">
+      <h3>Nenhum filme encontrado!</h3>
+    </div>
+    <div class="loading" *ngIf="isLoad" >
+      <div class="lds-dual-ring"></div>
+    </div>
+    <!-- paginação -->
+    <div class="paginator">
+      <form>
+        <span>Total: {{total}} </span>
+        <button class="button-paginator" [disabled]="previousBlocked" (click)="paginate(previous, -1)" > < </button>
+        <span> {{ current }} </span>
+        <button class="button-paginator" [disabled]="nextBlocked" (click)="paginate(next, +1)" > > </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="cabecalho">
+  <h1>FILMES</h1>
+  <span>Busque por filmes para ver mais detalhes</span>
+</div>
+<div class="form-search">
+  <form (submit)="getFilms()">
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name" />
+    <button type="submit" >Buscar</button>
+  </form>
+</div>
+
+<div class="page-content">
+  <div class="table-result">
+    <table id="customers">
+      <tr>
+        <th>Titulo</th>
+        <th>Episódio</th>
+        <th>Criado em</th>
+        <th>Direção</th>
+        <th>Produção</th>
+      </tr>
+      <tr *ngFor="let data of films;">
+        <td> {{ data.title }} </td>
+        <td> {{ data.episode_id }} </td>
+        <td> {{ data.created }} </td>
+        <td> {{ data.director }} </td>
+        <td> {{ data.producer }} </td>
+      </tr>
+    </table>
+    <div class="isEmpty" *ngIf="isEmpty">
+      <h3>Nenhum filme encontrado!</h3>
+    </div>
+    <div class="loading" *ngIf="isLoad" >
+      <div class="lds-dual-ring"></div>
+    </div>
+  </div>
+</div>

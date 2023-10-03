@@ -1,0 +1,14 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  cursor: pointer;
+}
+.menu-items{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
