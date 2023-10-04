@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Api } from 'src/app/api.service.';
+import { MatDialog } from '@angular/material/dialog';
+import { DetalhesComponent } from '../detalhes/detalhes.component';
 
 @Component({
   selector: 'app-nave',
@@ -7,7 +9,11 @@ import { Api } from 'src/app/api.service.';
   styleUrls: ['./nave.component.css']
 })
 export class NaveComponent {
+
+
+
   starships: any[]; // Certifique-se de que dadosDaApi está inicializado
+  detail_starship: any;
   isLoad: boolean;
   isEmpty: boolean;
   nextBlocked: boolean;
@@ -22,8 +28,9 @@ export class NaveComponent {
     name: "",
   }
 
-  constructor(private Api: Api) {
+  constructor(private Api: Api, public dialog: MatDialog) {
       this.starships = [];
+      // this.detail_starship = [];
       this.isLoad = true;
       this.isEmpty = false;
       this.total = 0;
@@ -38,6 +45,16 @@ export class NaveComponent {
     // função para quando iniciar o componente ja carregar os dados
     ngOnInit(): void {
       this.getStarships();
+    }
+
+    openDialog(): void {
+      const dialogRef = this.dialog.open(DetalhesComponent, {
+        data: this.detail_starship
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
     }
 
     getStarships() {
@@ -78,4 +95,20 @@ export class NaveComponent {
         console.error('Erro ao buscar naves:', error);
       });
    }
+
+   getDetails(id: string){
+    this.Api.getDetails(id)
+    .then(response => {
+      this.detail_starship = response
+      console.log(this.detail_starship)
+      this.isLoad = false;
+      this.openDialog();
+    })
+    .catch(error => {
+      console.error('Erro ao buscar naves:', error);
+    })
+    
+   }
+
+
 }

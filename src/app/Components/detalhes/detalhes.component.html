@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Detalhes</h1>
+  <!-- tabela de Detalhes -->
+  <div class="details">
+    <table id="customers" *ngIf="data">
+      <tr>
+        <th>Nome</th>
+        <th>Modelo</th>
+        <th>Manufacturer</th>
+        <th>crew</th>
+        <th>passengers</th>
+        <th>cargo_capacity</th>
+        <th>consumables</th>
+        <th>hyperdrive_rating</th>
+        <th>created</th>
+      </tr>
+      <tr>
+        <td> {{ data.name }} </td>
+        <td> {{ data.model }} </td>
+        <td> {{ data.manufacturer }} </td>
+        <td> {{ data.crew }} </td>
+        <td> {{ data.passengers }} </td>
+        <td> {{ data.cargo_capacity }} </td>
+        <td> {{ data.consumables }} </td>
+        <td> {{ data.hyperdrive_rating }} </td>
+        <td> {{ data.created }} </td>
+      </tr>
+    </table>
+  </div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Fechar</button>
+</div>

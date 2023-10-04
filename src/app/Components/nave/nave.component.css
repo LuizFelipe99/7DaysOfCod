@@ -23,7 +23,7 @@
 
 .table-result{
   box-shadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
-  width: 50%;
+  width: 100%;
   border-radius: 10px;
 }
 .form-data{
@@ -31,7 +31,8 @@
 }
 .page-content{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+
 }
 .mat-raised-button{
 height: 56px;
@@ -92,6 +93,16 @@ height: 56px;
   border: 1px solid #ddd;
 }
 .button-paginator:hover{
+  cursor: pointer;
+  background-color: #3F51B5;
+}
+.more_details{
+  padding: 10px;
+  transition: background-color .3s;
+  border-radius: 8px;
+  border: 1px solid black
+}
+.more_details:hover{
   cursor: pointer;
   background-color: #3F51B5;
 }

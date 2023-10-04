@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { FilmesComponent } from './Components/filmes/filmes.component';
 import { NaveComponent } from './Components/nave/nave.component';
 import {MatTableModule} from '@angular/material/table';
+import { DetalhesComponent } from './Components/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {MatTableModule} from '@angular/material/table';
     HomeComponent,
     MenuComponent,
     FilmesComponent,
-    NaveComponent
+    NaveComponent,
+    DetalhesComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

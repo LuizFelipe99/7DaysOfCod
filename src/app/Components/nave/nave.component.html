@@ -1,6 +1,5 @@
 <div class="cabecalho">
   <h1>naves</h1>
-  <span>Busque por naves</span>
 </div>
 <!-- <div class="form-search">
   <form (submit)="getStarships()">
@@ -8,7 +7,6 @@
     <button type="submit" >Buscar</button>
   </form>
 </div> -->
-
 <div class="page-content">
   <div class="table-result">
     <table id="customers">
@@ -19,6 +17,7 @@
         <th>Valor</th>
         <th>Largura</th>
         <th>Velocidade maxima</th>
+        <th>Ver mais</th>
       </tr>
       <tr *ngFor="let data of starships;">
         <td> {{ data.name }} </td>
@@ -27,6 +26,7 @@
         <td> {{ data.cost_in_credits }} </td>
         <td> {{ data.length }} </td>
         <td> {{ data.max_atmosphering_speed }} </td>
+        <td> <button class="more_details" (click)="getDetails(data.url)" > Detalhes </button> </td>
       </tr>
     </table>
     
@@ -47,3 +47,5 @@
     </div>
   </div>
 </div>
+
+

@@ -81,3 +81,25 @@ height: 56px;
   align-items: center;
   color: red;
 }
+
+input{
+  border-radius: 10px;
+  border-style: none;
+  border: 1px solid black;
+  font-size: 18px;
+  padding: 8px;
+}
+
+button{
+  border-radius: 10px;
+  border-style: none;
+  font-size: 18px;
+  padding: 8px;
+  transition: background-color .3s;
+  margin-left: 1%;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #3F51B5;
+}

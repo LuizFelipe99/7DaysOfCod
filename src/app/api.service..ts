@@ -44,4 +44,15 @@ export class Api {
     });
   }
 
+  getDetails(id: any): Promise<any> {
+    const id_starthip = `${id}`;
+    return this.http.get(id_starthip).toPromise()
+      .then(response => {
+        return response;
+      })
+    .catch(error => {
+      return Promise.reject(error);
+    });
+  }
+
 }

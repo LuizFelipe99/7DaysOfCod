@@ -1,1 +1,12 @@
-<p>home works!</p>
+<b>
+  Desafio iniciado dia 27/09/2023
+  <p>Desafio finalisado 04/10/2023</p>
+</b>
+<div class="content">
+  <ul *ngFor="let data of tasks">
+    <li> {{data.name}} </li>
+    <ol>
+      <span> {{data.description}} </span>
+    </ol>
+  </ul>
+</div>
